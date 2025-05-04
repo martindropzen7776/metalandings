@@ -6,7 +6,7 @@ const testimonials = [
     name: 'Maria Johnson',
     revenue: '12,547',
     timeframe: '30 days',
-    image: 'https://images.pexels.com/photos/7821702/pexels-photo-7821702.jpeg',
+    image: '/src/components/1.png',
     text: 'I recovered my investment in just 2 days. These landing pages converted amazingly well with my digital products.',
     stars: 5
   },
