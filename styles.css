@@ -18,6 +18,10 @@
   --green-600: #16a34a;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
