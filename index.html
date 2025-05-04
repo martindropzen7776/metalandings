@@ -402,26 +402,33 @@
     // Initialize Lucide icons
     lucide.createIcons();
 
-    // Countdown Timer
-    function startTimer() {
-      let minutes = 29;
-      let seconds = 59;
-      const timerElement = document.getElementById('timer');
-      
-      setInterval(() => {
-        if (seconds > 0) {
-          seconds--;
-        } else if (minutes > 0) {
-          minutes--;
-          seconds = 59;
-        } else {
-          minutes = 29;
-          seconds = 59;
-        }
-        
-        timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-      }, 1000);
+// Countdown Timer
+function startTimer() {
+  let hours = 1;
+  let minutes = 30;
+  let seconds = 0;
+  const timerElement = document.getElementById('timer');
+
+  setInterval(() => {
+    if (seconds > 0) {
+      seconds--;
+    } else if (minutes > 0) {
+      minutes--;
+      seconds = 59;
+    } else if (hours > 0) {
+      hours--;
+      minutes = 59;
+      seconds = 59;
+    } else {
+      // Reset or stop timer if needed
+      hours = 1;
+      minutes = 30;
+      seconds = 0;
     }
+
+    timerElement.textContent = `${String(hours)}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  }, 1000);
+}
 
     // Carousel functionality
     function initCarousel() {
