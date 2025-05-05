@@ -430,59 +430,7 @@ function startTimer() {
   }, 1000);
 }
 
-    // Carousel functionality
-    function initCarousel() {
-      const examples = [
-        {
-          title: '',
-          description: '',
-          image: '9.png'
-        },
-        {
-          title: '',
-          description: '',
-          image: '10.png'
-        },
-        {
-          title: '',
-          description: '',
-          image: 'https://images.pexels.com/photos/5076522/pexels-photo-5076522.jpeg'
-        }
-      ];
-
-      let currentIndex = 0;
-      const image = document.querySelector('.carousel-image');
-      const title = document.querySelector('.carousel-caption h3');
-      const description = document.querySelector('.carousel-caption p');
-      const dots = document.querySelectorAll('.carousel-dots .dot');
-      
-      function updateCarousel() {
-        image.src = examples[currentIndex].image;
-        title.textContent = examples[currentIndex].title;
-        description.textContent = examples[currentIndex].description;
-        
-        dots.forEach((dot, index) => {
-          dot.classList.toggle('active', index === currentIndex);
-        });
-      }
-
-      document.querySelector('.carousel-next').addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % examples.length;
-        updateCarousel();
-      });
-
-      document.querySelector('.carousel-prev').addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + examples.length) % examples.length;
-        updateCarousel();
-      });
-
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          currentIndex = index;
-          updateCarousel();
-        });
-      });
-    }
+  
 
     // Testimonials carousel
     function initTestimonials() {
