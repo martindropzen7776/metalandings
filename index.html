@@ -95,10 +95,10 @@
 <div class="carousel">
   <div class="carousel-content">
     <div class="carousel-slide active">
-      <img src="9.png" alt="Sales Landing Page" class="carousel-image">
+      <img src="10.png" alt="Sales Landing Page" class="carousel-image">
     </div>
     <div class="carousel-slide">
-      <img src="10.png" alt="Elegant Portfolio" class="carousel-image">
+      <img src="9.png" alt="Elegant Portfolio" class="carousel-image">
     </div>
     <div class="carousel-slide">
       <img src="https://images.pexels.com/photos/5076522/pexels-photo-5076522.jpeg" alt="Modern Business Site" class="carousel-image">
@@ -114,43 +114,41 @@
 </div>
 
 <script>
-  function initCarousel() {
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.carousel-dots .dot');
-    let currentIndex = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const dots = document.querySelectorAll('.dot');
+const prevButton = document.querySelector('.carousel-prev');
+const nextButton = document.querySelector('.carousel-next');
+const content = document.querySelector('.carousel-content');
 
-    function updateCarousel() {
-      slides.forEach((slide, index) => {
-        slide.classList.toggle('active', index === currentIndex);
-      });
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentIndex);
-      });
-    }
+let currentIndex = 0;
 
-    document.querySelector('.carousel-next').addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      updateCarousel();
-    });
+function updateCarousel() {
+  content.style.transform = `translateX(-${currentIndex * 100}%)`;
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentIndex);
+  });
+}
 
-    document.querySelector('.carousel-prev').addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      updateCarousel();
-    });
+nextButton.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateCarousel();
+});
 
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        currentIndex = index;
-        updateCarousel();
-      });
-    });
+prevButton.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  updateCarousel();
+});
 
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    currentIndex = index;
     updateCarousel();
-  }
+  });
+});
 
-  document.addEventListener('DOMContentLoaded', initCarousel);
+updateCarousel();
 </script>
-
+      
 <style>
   .carousel-slide { display: none; }
   .carousel-slide.active { display: block; }
