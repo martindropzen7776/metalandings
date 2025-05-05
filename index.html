@@ -94,7 +94,7 @@
 
 <div class="carousel">
   <div class="carousel-content">
-    <div class="carousel-slide">
+    <div class="carousel-slide active">
       <img src="10.png" alt="Sales Landing Page" class="carousel-image">
     </div>
     <div class="carousel-slide">
@@ -119,14 +119,14 @@ const slides = document.querySelectorAll('.carousel-slide');
 const dots = document.querySelectorAll('.dot');
 const prevButton = document.querySelector('.carousel-prev');
 const nextButton = document.querySelector('.carousel-next');
-const content = document.querySelector('.carousel-content');
 
 let currentIndex = 0;
 const totalSlides = slides.length;
 
 function updateCarousel() {
-  const offset = -currentIndex * 100;
-  content.style.transform = `translateX(${offset}%)`;
+  slides.forEach((slide, index) => {
+    slide.classList.toggle('active', index === currentIndex);
+  });
 
   dots.forEach((dot, index) => {
     dot.classList.toggle('active', index === currentIndex);
@@ -162,13 +162,15 @@ updateCarousel();
 }
 
 .carousel-content {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
+  position: relative;
 }
 
 .carousel-slide {
-  min-width: 100%;
-  box-sizing: border-box;
+  display: none;
+}
+
+.carousel-slide.active {
+  display: block;
 }
 
 .carousel-image {
@@ -216,6 +218,7 @@ updateCarousel();
   background-color: black;
 }
 </style>
+
       
 
 
