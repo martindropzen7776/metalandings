@@ -90,11 +90,11 @@
 
   <div class="examples" id="examples">
     <div class="container">
-      <h2>Examples of our landing pages</h2>
-      
+<h2>Examples of our landing pages</h2>
+
 <div class="carousel">
   <div class="carousel-content">
-    <div class="carousel-slide active">
+    <div class="carousel-slide">
       <img src="10.png" alt="Sales Landing Page" class="carousel-image">
     </div>
     <div class="carousel-slide">
@@ -106,22 +106,14 @@
   </div>
   <button class="carousel-prev">&#10094;</button>
   <button class="carousel-next">&#10095;</button>
+
   <div class="carousel-dots">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
+    <button class="dot active"></button>
+    <button class="dot"></button>
+    <button class="dot"></button>
   </div>
 </div>
 
-        <div class="carousel-dots">
-          <button class="dot active"></button>
-          <button class="dot"></button>
-          <button class="dot"></button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
 <script>
 const slides = document.querySelectorAll('.carousel-slide');
 const dots = document.querySelectorAll('.dot');
@@ -160,11 +152,69 @@ dots.forEach((dot, index) => {
 
 updateCarousel();
 </script>
-      
+
 <style>
-  .carousel-slide { display: none; }
-  .carousel-slide.active { display: block; }
-  .carousel-dots .dot.active { background: black; }
+.carousel {
+  position: relative;
+  width: 600px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel-content {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carousel-prev, .carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.carousel-prev {
+  left: 10px;
+}
+
+.carousel-next {
+  right: 10px;
+}
+
+.carousel-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.carousel-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.carousel-dots .dot.active {
+  background-color: black;
+}
 </style>
       
 
