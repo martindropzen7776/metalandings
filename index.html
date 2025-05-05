@@ -113,6 +113,15 @@
   </div>
 </div>
 
+        <div class="carousel-dots">
+          <button class="dot active"></button>
+          <button class="dot"></button>
+          <button class="dot"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 <script>
 const slides = document.querySelectorAll('.carousel-slide');
 const dots = document.querySelectorAll('.dot');
@@ -121,21 +130,24 @@ const nextButton = document.querySelector('.carousel-next');
 const content = document.querySelector('.carousel-content');
 
 let currentIndex = 0;
+const totalSlides = slides.length;
 
 function updateCarousel() {
-  content.style.transform = `translateX(-${currentIndex * 100}%)`;
+  const offset = -currentIndex * 100;
+  content.style.transform = `translateX(${offset}%)`;
+
   dots.forEach((dot, index) => {
     dot.classList.toggle('active', index === currentIndex);
   });
 }
 
 nextButton.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % slides.length;
+  currentIndex = (currentIndex + 1) % totalSlides;
   updateCarousel();
 });
 
 prevButton.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
   updateCarousel();
 });
 
@@ -155,14 +167,7 @@ updateCarousel();
   .carousel-dots .dot.active { background: black; }
 </style>
       
-        <div class="carousel-dots">
-          <button class="dot active"></button>
-          <button class="dot"></button>
-          <button class="dot"></button>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
 <div class="features-section">
   <div class="container">
