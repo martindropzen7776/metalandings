@@ -84,21 +84,88 @@
     <div class="container">
       <h2>Examples of our landing pages</h2>
       
-      <div class="carousel">
-        <div class="carousel-content">
-          <img src="9.png" alt="Sales Landing Page" class="carousel-image">
-          <div class="carousel-caption">
-            <h3>Sales landing page</h3>
-            <p>Template optimized for digital product sales</p>
-          </div>
-          
-          <button class="carousel-prev">
-            <i data-lucide="chevron-left"></i>
-          </button>
-          <button class="carousel-next">
-            <i data-lucide="chevron-right"></i>
-          </button>
-        </div>
+<div class="carousel">
+  <div class="carousel-content">
+    <div class="carousel-slide active">
+      <img src="9.png" alt="Sales Landing Page">
+      <div class="carousel-caption">
+        <h3>Sales landing page</h3>
+        <p>Template optimized for digital product sales</p>
+      </div>
+    </div>
+    <div class="carousel-slide">
+      <img src="10.png" alt="Elegant Portfolio">
+      <div class="carousel-caption">
+        <h3>Elegant Portfolio</h3>
+        <p>Showcase your work beautifully</p>
+      </div>
+    </div>
+    <div class="carousel-slide">
+      <img src="https://images.pexels.com/photos/5076522/pexels-photo-5076522.jpeg" alt="Modern Business Site">
+      <div class="carousel-caption">
+        <h3>Modern Business Site</h3>
+        <p>Professional design for your brand</p>
+      </div>
+    </div>
+
+    <button class="carousel-prev">
+      <i data-lucide="chevron-left"></i>
+    </button>
+    <button class="carousel-next">
+      <i data-lucide="chevron-right"></i>
+    </button>
+
+    <div class="carousel-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initCarousel() {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dots .dot');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === currentIndex);
+      });
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
+    }
+
+    document.querySelector('.carousel-next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    });
+
+    document.querySelector('.carousel-prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        updateCarousel();
+      });
+    });
+
+    updateCarousel();
+  }
+
+  document.addEventListener('DOMContentLoaded', initCarousel);
+</script>
+
+<style>
+  .carousel-slide { display: none; }
+  .carousel-slide.active { display: block; }
+  .carousel-dots .dot.active { background: black; }
+</style>
         
         <div class="carousel-dots">
           <button class="dot active"></button>
