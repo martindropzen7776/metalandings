@@ -213,8 +213,11 @@ h1 {
 
 .carousel {
   width: 100%;
-  max-width: 1600px;
-  height: 800px; /* o lo que necesites */
+  max-width: 1600px; /* antes era 1200px */
+  aspect-ratio: 16/9; /* mantiene proporción */
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
 }
 
 
