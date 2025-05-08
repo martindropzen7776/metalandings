@@ -808,5 +808,27 @@ h1 {
     z-index: 9999;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
+.others-charge,
+.you-receive {
+  background: var(--purple-50);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  color: #333; /* ✅ añade esto para forzar un gris fuerte */
+}
+
+.others-charge h4,
+.you-receive h4 {
+  color: var(--purple-900); /* ✅ para que los títulos se vean fuertes */
+}
+
+.charge-item,
+.receive-item {
+  color: #444; /* ✅ mejora contraste de las líneas */
+}
+
+.charge-total span:last-child,
+.receive-total span:last-child {
+  font-weight: bold;
+}
 
 }
