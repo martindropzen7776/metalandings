@@ -34,6 +34,20 @@ body {
   color: #1a1a1a;
 }
 
+.offer-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #f7d100; /* O el color que quieras */
+    color: #000;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: bold;
+    z-index: 9999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
 .container {
   max-width: 1280px;
   margin: 0 auto;
