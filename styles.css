@@ -776,7 +776,7 @@ h1 {
 }
 
 @media (max-width: 480px) {
-  .special-offer {
+  .special- {
     font-size: 0.875rem;
     padding: 0.5rem 1rem;
   }
@@ -801,7 +801,7 @@ h1 {
     left: 0;
     width: 100%;
     background: #f7d100; /* O el color que quieras */
-    color: #000;
+    color: #6b21a8;
     text-align: center;
     padding: 10px 0;
     font-weight: bold;
