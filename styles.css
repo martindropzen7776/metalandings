@@ -711,6 +711,7 @@ h1 {
   background: var(--purple-50);
   padding: 1rem;
   border-radius: 1rem;
+  color: var(--purple-900); /* más oscuro, elegante y acorde a tu paleta */
 }
 
 .bonus-item i {
