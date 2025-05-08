@@ -16,6 +16,37 @@
     <i data-lucide="zap"></i>
     <span>SPECIAL OFFER - 50% OFF! | <span id="sticky-timer">01:30:00</span></span>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    let duration = 90 * 60; // 90 minutos en segundos
+    const display = document.getElementById('sticky-timer');
+
+    function updateTimer() {
+        const hours = Math.floor(duration / 3600);
+        const minutes = Math.floor((duration % 3600) / 60);
+        const seconds = duration % 60;
+
+        display.textContent =
+            (hours > 0 ? String(hours).padStart(2, '0') + ':' : '') +
+            String(minutes).padStart(2, '0') + ':' +
+            String(seconds).padStart(2, '0');
+
+        if (duration > 0) {
+            duration--;
+        } else {
+            // Opcional: si querés reiniciar cuando termina
+            // duration = 90 * 60;
+            // O podés ocultar el banner si termina:
+            // document.querySelector('.offer-banner').style.display = 'none';
+        }
+    }
+
+    updateTimer(); // actualizar de inmediato
+    setInterval(updateTimer, 1000); // cada segundo
+});
+</script>
+
       
       <h1>
         +300 LANDING PAGES<br>
