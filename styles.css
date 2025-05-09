@@ -777,7 +777,7 @@ h1 {
 }
 
 @media (max-width: 480px) {
-  .special- {
+  .special-offer {
     font-size: 0.875rem;
     padding: 0.5rem 1rem;
   }
@@ -796,7 +796,7 @@ h1 {
     padding: 1.5rem;
   }
 
-.offer-banner {
+  .offer-banner {
     position: fixed;
     top: 0;
     left: 0;
@@ -808,7 +808,9 @@ h1 {
     font-weight: bold;
     z-index: 9999;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
 }
+
 .others-charge,
 .you-receive {
   background: var(--purple-50);
