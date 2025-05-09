@@ -126,7 +126,7 @@ h1 {
   border-radius: 1rem;
   font-size: 1.875rem;
   text-decoration: none;
-  margin: 0.5rem 0 2rem 0;
+  margin: -2rem 0 2rem 0; /* margen superior negativo: lo sube más */
   position: relative;
   overflow: hidden;
   width: 100%;
